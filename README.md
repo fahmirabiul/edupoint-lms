@@ -1,66 +1,350 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🎓 EduPoint LMS
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistem Manajemen Pembelajaran (Learning Management System) berbasis web yang dibangun menggunakan Laravel 10, Livewire, dan Tailwind CSS.
 
-## About Laravel
+## 📋 Daftar Isi
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   [Tentang Proyek](#tentang-proyek)
+-   [Fitur Utama](#fitur-utama)
+-   [Teknologi yang Digunakan](#teknologi-yang-digunakan)
+-   [Persyaratan Sistem](#persyaratan-sistem)
+-   [Instalasi](#instalasi)
+-   [Konfigurasi](#konfigurasi)
+-   [Menjalankan Aplikasi](#menjalankan-aplikasi)
+-   [Struktur Proyek](#struktur-proyek)
+-   [Testing](#testing)
+-   [Kontribusi](#kontribusi)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🎯 Tentang Proyek
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+EduPoint LMS adalah platform pembelajaran online yang memungkinkan instruktur untuk membuat dan mengelola kursus, serta memungkinkan siswa untuk mendaftar dan mengikuti kursus dengan sistem pembayaran terintegrasi.
 
-## Learning Laravel
+## ✨ Fitur Utama
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Untuk Siswa:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   📚 **Pencarian dan Browsing Kursus** - Melihat katalog kursus yang tersedia
+-   💳 **Sistem Pembayaran** - Mendaftar kursus dengan metode pembayaran yang fleksibel
+-   📧 **Notifikasi Email** - Menerima pemberitahuan saat berhasil mendaftar kursus
+-   💬 **Sistem Pesan** - Berkomunikasi dengan instruktur dan siswa lain
+-   🔔 **Real-time Notifications** - Notifikasi langsung untuk update penting
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Untuk Admin/Instruktur:
 
-## Laravel Sponsors
+-   ➕ **Manajemen Kursus** - Membuat, mengedit, dan menghapus kursus
+-   👥 **Manajemen Enrollment** - Melihat dan mengelola pendaftaran siswa
+-   📊 **Dashboard Admin** - Melihat statistik dan informasi penting
+-   📬 **Notifikasi Otomatis** - Menerima pemberitahuan saat ada siswa baru mendaftar
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Fitur Teknis:
 
-### Premium Partners
+-   🔐 **Autentikasi & Otorisasi** - Sistem login yang aman dengan role-based access control
+-   🎨 **Real-time UI** - Interface yang responsif menggunakan Livewire
+-   🔄 **Event-Driven Architecture** - Sistem event dan listener untuk proses yang efisien
+-   💾 **Repository Pattern** - Kode yang terstruktur dan mudah di-maintain
+-   🏭 **Factory Pattern** - Implementasi payment gateway yang fleksibel
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 🛠️ Teknologi yang Digunakan
 
-## Contributing
+### Backend:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+-   **Laravel 10** - PHP Framework untuk web aplikasi
+-   **PHP 8.1+** - Bahasa pemrograman server-side
+-   **MySQL** - Database relasional
+-   **Laravel Sanctum** - API authentication
+-   **Laravel Breeze** - Authentication scaffolding
 
-## Code of Conduct
+### Frontend:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+-   **Livewire 3** - Framework untuk membuat interface reaktif tanpa JavaScript kompleks
+-   **Volt** - Livewire single-file components
+-   **Alpine.js** - JavaScript framework minimal untuk interaksi UI
+-   **Tailwind CSS** - Utility-first CSS framework
+-   **Vite** - Frontend build tool yang cepat
 
-## Security Vulnerabilities
+### Development & Testing:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+-   **Pest PHP** - Testing framework modern untuk PHP
+-   **Laravel Pint** - Code style fixer
+-   **Faker** - Library untuk generate data dummy
 
-## License
+## 💻 Persyaratan Sistem
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Pastikan sistem Anda memenuhi persyaratan berikut:
+
+-   PHP >= 8.1
+-   Composer
+-   Node.js >= 18.x dan NPM
+-   MySQL >= 5.7 atau MariaDB >= 10.3
+-   Git
+
+### Extension PHP yang Diperlukan:
+
+-   BCMath
+-   Ctype
+-   cURL
+-   DOM
+-   Fileinfo
+-   JSON
+-   Mbstring
+-   OpenSSL
+-   PCRE
+-   PDO
+-   Tokenizer
+-   XML
+
+## 📥 Instalasi
+
+### 1. Clone Repository
+
+```bash
+git clone <repository-url>
+cd edupoint-lms
+```
+
+### 2. Install Dependencies
+
+```bash
+# Install PHP dependencies
+composer install
+
+# Install JavaScript dependencies
+npm install
+```
+
+### 3. Konfigurasi Environment
+
+```bash
+# Copy file environment
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+```
+
+### 4. Konfigurasi Database
+
+Edit file `.env` dan sesuaikan dengan konfigurasi database Anda:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=edupoint_lms
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 5. Jalankan Migration
+
+```bash
+# Jalankan migration untuk membuat tabel database
+php artisan migrate
+
+# (Opsional) Jalankan seeder untuk data dummy
+php artisan db:seed
+```
+
+## ⚙️ Konfigurasi
+
+### Konfigurasi Mail
+
+Edit konfigurasi email di file `.env`:
+
+```env
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=your-email@gmail.com
+MAIL_PASSWORD=your-app-password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=noreply@edupoint.com
+MAIL_FROM_NAME="${APP_NAME}"
+```
+
+### Konfigurasi Queue
+
+Untuk menjalankan job dan notifikasi secara asynchronous:
+
+```env
+QUEUE_CONNECTION=database
+```
+
+### Konfigurasi Broadcasting (Opsional)
+
+Jika ingin menggunakan real-time features:
+
+```env
+BROADCAST_DRIVER=log
+```
+
+## 🚀 Menjalankan Aplikasi
+
+### Development Mode
+
+Buka 3 terminal dan jalankan perintah berikut:
+
+**Terminal 1 - Laravel Development Server:**
+
+```bash
+php artisan serve
+```
+
+**Terminal 2 - Vite Development Server (untuk asset):**
+
+```bash
+npm run dev
+```
+
+**Terminal 3 - Queue Worker (untuk background jobs):**
+
+```bash
+php artisan queue:work
+```
+
+Aplikasi akan berjalan di: `http://localhost:8000`
+
+### Production Build
+
+```bash
+# Build assets untuk production
+npm run build
+
+# Optimasi aplikasi
+php artisan optimize
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
+
+## 📁 Struktur Proyek
+
+```
+edupoint-lms/
+├── app/
+│   ├── Events/              # Event classes (UserEnrolled, dll)
+│   ├── Listeners/           # Event listeners (NotifyInstructor, dll)
+│   ├── Livewire/            # Livewire components
+│   │   ├── Admin/           # Admin components (Course, Enrollment management)
+│   │   ├── CourseIndex.php  # Halaman daftar kursus
+│   │   ├── CourseShow.php   # Halaman detail kursus
+│   │   └── MessageIndex.php # Halaman pesan
+│   ├── Models/              # Eloquent models (User, Course, Enrollment)
+│   ├── Repositories/        # Repository pattern implementation
+│   ├── Services/            # Business logic services
+│   ├── Factories/           # Factory pattern (PaymentFactory)
+│   └── Notifications/       # Notification classes
+├── database/
+│   ├── migrations/          # Database migrations
+│   ├── seeders/             # Database seeders
+│   └── factories/           # Model factories untuk testing
+├── resources/
+│   ├── views/               # Blade templates
+│   ├── css/                 # Stylesheet files
+│   └── js/                  # JavaScript files
+├── routes/
+│   ├── web.php              # Web routes
+│   ├── api.php              # API routes
+│   └── channels.php         # Broadcasting channels
+├── tests/
+│   ├── Feature/             # Feature tests
+│   └── Unit/                # Unit tests
+└── public/                  # Public assets
+```
+
+## 🧪 Testing
+
+Proyek ini menggunakan Pest PHP untuk testing:
+
+```bash
+# Jalankan semua test
+php artisan test
+
+# atau dengan Pest
+./vendor/bin/pest
+
+# Jalankan test spesifik
+./vendor/bin/pest --filter=EnrollmentTest
+
+# Jalankan dengan coverage
+./vendor/bin/pest --coverage
+```
+
+## 👥 Role & Permission
+
+### User Roles:
+
+-   **Admin**: Akses penuh ke semua fitur termasuk manajemen kursus dan enrollment
+-   **Student**: Dapat browsing kursus, mendaftar, dan mengakses kursus yang sudah dibeli
+
+### Middleware:
+
+-   `auth`: Memastikan user sudah login
+-   `verified`: Memastikan email sudah diverifikasi
+-   `admin`: Memastikan user memiliki role admin
+
+## 🔄 Arsitektur & Design Patterns
+
+### Repository Pattern
+
+Memisahkan logic database dari business logic:
+
+-   `CourseRepository` & `CourseRepositoryInterface`
+-   `EnrollmentRepository` & `EnrollmentRepositoryInterface`
+-   `UserRepository` & `UserRepositoryInterface`
+
+### Factory Pattern
+
+Implementasi payment gateway yang fleksibel:
+
+-   `PaymentFactory` untuk membuat instance payment gateway
+-   `PaymentGatewayInterface` untuk contract
+
+### Service Layer
+
+Business logic terpisah dari controller:
+
+-   `EnrollmentService` - Handle enrollment process
+-   `CourseService` - Handle course management
+
+### Event-Driven
+
+Menggunakan Events dan Listeners:
+
+-   Event: `UserEnrolled`
+-   Listeners: `NotifyInstructor`, `NotifyUserOfEnrollment`
+
+## 🤝 Kontribusi
+
+Kontribusi sangat diterima! Silakan ikuti langkah berikut:
+
+1. Fork repository ini
+2. Buat branch untuk fitur baru (`git checkout -b feature/AmazingFeature`)
+3. Commit perubahan Anda (`git commit -m 'Add some AmazingFeature'`)
+4. Push ke branch (`git push origin feature/AmazingFeature`)
+5. Buat Pull Request
+
+### Coding Standards
+
+-   Ikuti PSR-12 coding standard untuk PHP
+-   Gunakan Laravel Pint untuk format code: `./vendor/bin/pint`
+-   Tulis test untuk fitur baru
+-   Update dokumentasi jika diperlukan
+
+## 🙏 Acknowledgments
+
+-   Laravel Framework
+-   Livewire
+-   Tailwind CSS
+-   Semua contributor yang telah membantu proyek ini
+
+## 📞 Kontak & Support
+
+Jika Anda memiliki pertanyaan atau membutuhkan bantuan:
+
+-   Buat issue di repository ini
+-   Email: [email-anda@example.com]
+
+---
+
+**Dibuat dengan ❤️ menggunakan Laravel & Livewire**
