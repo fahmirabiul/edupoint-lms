@@ -347,4 +347,4 @@ Jika Anda memiliki pertanyaan atau membutuhkan bantuan:
 
 ---
 
-**Dibuat dengan ❤️ menggunakan Laravel & Livewire**
+**Dibuat dengan menggunakan Laravel & Livewire**
